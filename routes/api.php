@@ -13,11 +13,14 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::post('/register','Auth\RegisterController@register');
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::prefix('todos')->group(function () {
+
+Route::prefix('/todos')->middleware('auth:api')->group(function () {
     Route::get('/', 'TodoController@index');
     Route::post('/', 'TodoController@store');
     Route::get('/{id}', 'TodoController@show');
