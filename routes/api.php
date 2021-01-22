@@ -31,4 +31,8 @@ Route::prefix('todos')->middleware('auth:api')->group(function () {
     Route::delete('{id}', 'TodoController@destroy');
     Route::get('{id}/user', 'TodoController@getUser');
 });
+
+Route::prefix('user')->middleware('auth:api')->group(function () {
+    Route::get('/', 'CurrentUserController@show');
+    Route::get('/todos', 'CurrentUserController@showTodos');
 });
