@@ -12,7 +12,6 @@ class TodosTableSeeder extends Seeder
      */
     public function run()
     {
-        //
         Todo::truncate();
 
         $faker = \Faker\Factory::create();
@@ -20,7 +19,8 @@ class TodosTableSeeder extends Seeder
         for ($i=0; $i < 10; $i++) { 
             Todo::create([
                 'title' => $faker->sentence,
-                'completed' => $faker->boolean
+                'completed' => $faker->boolean,
+                'user_id' => $faker->numberBetween(1, 10)
             ]);
         }
     }
