@@ -40,3 +40,7 @@ https://demo.taylorw.tw:60002/api
 ##### Current User
 - GET: /user
 - GET: /user/todos
+
+## Todos
+- Add Service layer
+- Unit test
