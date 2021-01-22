@@ -16,8 +16,10 @@ use Illuminate\Http\Request;
 Route::post('register','Auth\RegisterController@register');
 Route::post('login', 'Auth\LoginController@login');
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+Route::prefix('users')->middleware('auth:api')->group(function () {
+    Route::get('/', 'UserController@index');
+    Route::get('{id}', 'UserController@show');
+    Route::get('{id}/todos', 'UserController@getTodos');
 });
 
 
@@ -27,4 +29,6 @@ Route::prefix('todos')->middleware('auth:api')->group(function () {
     Route::get('{id}', 'TodoController@show');
     Route::put('{id}', 'TodoController@update');
     Route::delete('{id}', 'TodoController@destroy');
+    Route::get('{id}/user', 'TodoController@getUser');
+});
 });

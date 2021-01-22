@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Todo;
 use Illuminate\Support\Facades\Validator;
+use App\Models\Todo;
 
 class TodoController extends Controller
 {
@@ -103,6 +103,17 @@ class TodoController extends Controller
         Todo::find($id)->delete();
 
         return response()->json($null, 201);
+    }
+
+    /**
+     * Get the todo owner.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function getUser($id)
+    {
+        return response()->json(Todo::find($id)->user, 200);
     }
 
     /**
