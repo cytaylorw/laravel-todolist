@@ -123,8 +123,8 @@ class TodoController extends Controller
             
             case 'update':
                 $rules = [
-                    'title' => ['string', 'max:255'],
-                    'completed' => ['boolean'],
+                    'title' => ['required_without_all:completed', 'string', 'max:255'],
+                    'completed' => ['required_without_all:title', 'boolean'],
                 ];
                 break;
             
