@@ -11,7 +11,7 @@ https://demo.taylorw.tw:60002/api
 #### Header
 
 - Accept: application/json
-- Authorization: Bear <api_token>
+- Authorization: Bearer <api_token>
 
 #### User
 - email: admin@test.com
