@@ -14,10 +14,9 @@ https://demo.taylorw.tw:60002/api
 - Authorization: Bear <api_token>
 
 #### User
-
-email: admin@test.com
-password: admin
-api_token: 8Rw8CarpCOnlnWshGUS1TgowsqbxcEIjsNHeGVNEhNnDHeZcMWQ1YflFUkFUv02msJgZJf7G68qt1wwI
+- email: admin@test.com
+- password: admin
+- api_token: 8Rw8CarpCOnlnWshGUS1TgowsqbxcEIjsNHeGVNEhNnDHeZcMWQ1YflFUkFUv02msJgZJf7G68qt1wwI
 
 #### Routes
 
